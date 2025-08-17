@@ -18,28 +18,28 @@ This is a **Laravel 12 application** for managing products with CRUD functionali
 
 ## 📸 Screenshots
 
-### 1️⃣ Dashboard / Product List
+### 1️⃣
 ![Screenshot 1](screenshots/1%20(1).png)
 
-### 2️⃣ Create Product
+### 2️⃣
 ![Screenshot 2](screenshots/1%20(2).png)
 
-### 3️⃣ Product Details
+### 3️⃣
 ![Screenshot 3](screenshots/1%20(3).png)
 
-### 4️⃣ Edit Product
+### 4️⃣
 ![Screenshot 4](screenshots/1%20(4).png)
 
-### 5️⃣ Deleted Products (Trash Bin)
+### 5️⃣
 ![Screenshot 5](screenshots/1%20(5).png)
 
-### 6️⃣ Recover Product
+### 6️⃣
 ![Screenshot 6](screenshots/1%20(6).png)
 
-### 7️⃣ Like Feature
+### 7️⃣
 ![Screenshot 7](screenshots/1%20(7).png)
 
-### 8️⃣ Final Overview
+### 8️⃣
 ![Screenshot 8](screenshots/1%20(8).png)
 
 
