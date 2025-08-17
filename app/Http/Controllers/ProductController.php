@@ -106,30 +106,29 @@ class ProductController extends Controller
 
         return view("product.trash-bin", compact("products"));
     }
-   public function destoryProduct($id)
-{
-    $product = Product::withTrashed()->find($id);
+    public function destoryProduct($id)
+    {
+        $product = Product::withTrashed()->find($id);
+        //remove image 
+        if ($product) {
+            $product->forceDelete(); // permanently delete
+            return redirect()->route("product.index")->with("success", "Product permanently deleted!");
+        }
 
-    if ($product) {
-        $product->forceDelete(); // permanently delete
-        return redirect()->route("product.index")->with("success", "Product permanently deleted!");
+        return redirect()->route("product.index")->with("error", "Product not found!");
     }
 
-    return redirect()->route("product.index")->with("error", "Product not found!");
-}
+    public function restoreProduct($id)
+    {
+        $product = Product::withTrashed()->find($id);
 
-   public function restoreProduct($id)
-{
-    $product = Product::withTrashed()->find($id);
+        if ($product) {
+            $product->restore();
+            return redirect()->route("product.trashedProduct")
+                ->with("success", "Product restored successfully!");
+        }
 
-    if ($product) {
-        $product->restore();
         return redirect()->route("product.trashedProduct")
-                         ->with("success", "Product restored successfully!");
+            ->with("error", "Product not found!");
     }
-
-    return redirect()->route("product.trashedProduct")
-                     ->with("error", "Product not found!");
-}
-
 }

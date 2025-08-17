@@ -27,7 +27,7 @@
             <!-- Categories Nav -->
             <nav class="flex space-x-6 border-t border-gray-200 dark:border-gray-700 py-3 overflow-x-auto">
                 <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
-                <a href="/category" class="hover:text-indigo-600 dark:hover:text-indigo-400">Category</a>
+                <a href="/categories" class="hover:text-indigo-600 dark:hover:text-indigo-400">Category</a>
                 <a href="/products" class="hover:text-indigo-600 dark:hover:text-indigo-400">Products</a>
 
                 <a href="/category/sale" class="text-red-500 font-semibold">Deleted Products </a>
