@@ -48,8 +48,23 @@
                     <tr class="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                         <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">{{ $loop->iteration }}</td>
                         <td class="px-4 py-3 text-sm font-medium text-gray-800 dark:text-gray-100">
-                            {{ $product->name }}
+                            <div class="flex items-center space-x-3">
+                                {{-- Image --}}
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                                    @if ($product->image && file_exists(public_path('storage/' . $product->image)))
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                                            class="w-full h-full object-cover">
+                                    @else
+                                        <span class="text-gray-500 text-xs">No Img</span>
+                                    @endif
+                                </div>
+
+                                {{-- Name --}}
+                                <span>{{ $product->name }}</span>
+                            </div>
                         </td>
+
                         <td class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400">
                             {{ $product->category->name }}
                         </td>
@@ -82,7 +97,7 @@
                             <span
                                 class="px-2 py-1 text-xs rounded-full 
                                 {{ $product->status == 'active' ? 'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-200' : 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-200' }}">
-                                {{ $product->status == 'active' ? 'Active' : 'Inactive' }}
+                                {{ $product->status == 'active' ? 'Active' : 'In active' }}
                             </span>
                         </td>
                         <td class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400 truncate max-w-[200px]">

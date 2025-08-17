@@ -6,7 +6,7 @@
     <input type="text" name="name" value="{{ old('name') }}"
         class="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 
                focus:ring-2 focus:ring-blue-500 p-3 h-12"
-        placeholder="Enter product name" required>
+        placeholder="Enter product name" >
     @error('name')
         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
     @enderror
@@ -76,7 +76,7 @@
         class="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 
                focus:ring-2 focus:ring-blue-500 p-3 h-12">
         <option value="active" {{ old('status') == 'active' ? 'selected' : '' }}>Active</option>
-        <option value="inactive" {{ old('status') == 'inactive' ? 'selected' : '' }}>Inactive</option>
+        <option value="in-active" {{ old('status') == 'in-active' ? 'selected' : '' }}>Inactive</option>
     </select>
     @error('status')
         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -98,8 +98,3 @@
 </div>
 
 {{-- Submit Button --}}
-<div class="flex justify-end">
-    <button type="submit" class="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-md">
-        Create Product
-    </button>
-</div>

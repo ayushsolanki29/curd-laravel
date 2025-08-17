@@ -8,5 +8,12 @@
         @csrf
 
         @include('product.form')
+        <div class="flex justify-end">
+            <button type="submit"
+                class="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-md">
+                Create Product
+            </button>
+        </div>
+
     </form>
 @endsection

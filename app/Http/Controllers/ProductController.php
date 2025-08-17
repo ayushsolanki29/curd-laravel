@@ -10,7 +10,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+      $products = Product::orderBy('id', 'desc')->get();
+
         return view("product.products-list", compact("products"));
     }
     public function create()
@@ -42,6 +43,6 @@ class ProductController extends Controller
             $product->save();
         }
 
-        return redirect()->route("products.index")->with("success", "Product created successfully!");
+        return redirect()->route("product.index")->with("success", "Product created successfully!");
     }
 }
